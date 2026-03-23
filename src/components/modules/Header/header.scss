@@ -1,0 +1,40 @@
+.header {
+    position: sticky;
+    top: 0;
+    margin-bottom: var(--gap-base);
+    border-bottom: 2px solid var(--color-black);
+    background-color: rgba(#fff, 0.7);
+    --btn-px: 8px;
+    @at-root .is-dark & {
+        background-color: rgba(#222, 0.7);
+    }
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding-left: calc((var(--gap-base) / 4) - var(--btn-px));
+    padding-right: calc((var(--gap-base) / 4) - var(--btn-px));
+    padding-top: calc(constant(safe-area-inset-top) + var(--gap-base));
+    padding-top: calc(env(safe-area-inset-top) + var(--gap-base));
+    a {
+        font-size: 1em;
+        transition: box-shadow 0.1s ease-out;
+        padding: 0 var(--btn-px);
+        &:hover {
+            box-shadow: inset 0 -0.8rem 0 var(--color-yellow);
+        }
+    }
+}
+.btn-home {
+    font-weight: 700;
+    margin-right: auto;
+}
+.btn-menu {
+    margin-left: calc(var(--gap-base) - var(--btn-px));
+    svg {
+        display: inline-block;
+        vertical-align: top;
+        --git-icon-size: 18px;
+        width: var(--git-icon-size);
+        height: var(--git-icon-size);
+    }
+}

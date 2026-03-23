@@ -1,0 +1,11 @@
+export { ReactComponent as Html } from "../../../assets/images/icons/icon_html.svg";
+export { ReactComponent as CSS } from "../../../assets/images/icons/icon_css.svg";
+export { ReactComponent as SASS } from "../../../assets/images/icons/icon_sass.svg";
+export { ReactComponent as Tailwind } from "../../../assets/images/icons/icon_tailwind.svg";
+export { ReactComponent as Bootstrap } from "../../../assets/images/icons/icon_bootstrap.svg";
+export { ReactComponent as JS } from "../../../assets/images/icons/icon_js.svg";
+export { ReactComponent as Jquery } from "../../../assets/images/icons/icon_jquery.svg";
+export { ReactComponent as React } from "../../../assets/images/icons/icon_react.svg";
+export { ReactComponent as NPM } from "../../../assets/images/icons/icon_npm.svg";
+export { ReactComponent as Git } from "../../../assets/images/icons/icon_git.svg";
+export { ReactComponent as Vue } from "../../../assets/images/icons/icon_vue.svg";

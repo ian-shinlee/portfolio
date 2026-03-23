@@ -1,0 +1,94 @@
+.btn-quick {
+    position: absolute;
+    bottom: var(--gap-base);
+    border-radius: 50%;
+    --quick-size: 36px;
+    padding: 0;
+    width: var(--quick-size);
+    height: var(--quick-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+    pointer-events: auto;
+    right: calc(var(--gap-base) + 16px);
+    @media only screen and (min-width: 1600px) {
+        right: -18px;
+    }
+}
+.btn-top {
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+
+    --btn-top-bg: 0;
+    &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: var(--btn-top-bg);
+        transition: height 0.2s ease-out;
+        background-color: var(--color-yellow);
+    }
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        position: relative;
+        z-index: 1;
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+        transform: rotate(-45deg);
+        margin-top: 4px;
+    }
+    &:hover {
+        --btn-top-bg: 100%;
+    }
+
+    ~ .btn-mode {
+        bottom: calc(var(--gap-base) + var(--quick-size) + 20px);
+    }
+
+}
+.btn-mode {
+    background-color: transparent;
+    --color-active: var(--color-yellow);
+    transition: bottom 0.2s ease-out;
+    order: -1;
+    svg {
+        fill: var(--color-hover, var(--color-black));
+        display: block;
+        --mode-size: 24px;
+        min-width: var(--mode-size);
+        width: var(--mode-size);
+        height: var(--mode-size);
+        height: auto;
+    }
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: rotate(360deg);
+        --color-hover: var(--color-active);
+    }
+    &:active {
+        --color-hover: var(--color-black)
+    }
+    @at-root .is-dark & {
+        svg {
+            fill: var(--color-hover, var(--color-active));
+        }
+        &:hover {
+            --color-hover: var(--color-orange);
+        }
+        &:active {
+            --color-hover: var(--color-yellow);
+        }
+    }
+}
